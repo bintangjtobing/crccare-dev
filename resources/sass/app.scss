@@ -1,0 +1,16 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'); // for vuetify
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~vuetify/dist/vuetify.min.css';
+@import '~bootstrap/scss/bootstrap';
+@import '~sweetalert2/dist/sweetalert2.min.css';
+@import '~vue-slider-component/theme/default.css';
+@import '~vue2-dropzone/dist/vue2Dropzone.min.css';
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'); // for vuetify
+
+// my custom css
+@import '../css/index.css';

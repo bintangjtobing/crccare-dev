@@ -1,0 +1,73 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "axios": "^0.21.1",
+        "bootstrap": "^4.1.0",
+        "cross-env": "^5.1",
+        "eslint": "^7.15.0",
+        "husky": "^4.3.6",
+        "jquery": "^3.2",
+        "laravel-mix": "^5.0.9",
+        "lodash": "^4.17.20",
+        "popper.js": "^1.12",
+        "resolve-url-loader": "^3.1.2",
+        "sass": "^1.30.0",
+        "sass-loader": "^7.1.0",
+        "vue": "^2.5.17",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "chart.js": "^2.9.4",
+        "chartjs-chart-box-and-violin-plot": "^2.3.0",
+        "chartjs-plugin-annotation": "^0.5.7",
+        "mathjs": "^8.1.1",
+        "metismenu": "^3.0.6",
+        "moment": "^2.29.1",
+        "normal-distribution": "0.0.9",
+        "perfect-scrollbar": "^1.5.0",
+        "sweetalert2": "^10.12.5",
+        "uuid": "^8.3.2",
+        "vue-axios": "^3.2.0",
+        "vue-chartkick": "^0.6.1",
+        "vue-js-modal": "^2.0.0-rc.6",
+        "vue-router": "^3.4.9",
+        "vue-slider-component": "^3.2.11",
+        "vue-sweetalert2": "^4.1.1",
+        "vue2-dropzone": "^3.6.0",
+        "vuetify": "^2.4.2"
+    },
+    "name": "mine-care",
+    "description": "Hi :). I'm Bintang, thank you for giving me this opportunity to complete this assignment.",
+    "version": "1.0.0",
+    "main": "webpack.mix.js",
+    "directories": {
+        "test": "tests"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Digital-Envision/mine-care.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Digital-Envision/mine-care/issues"
+    },
+    "homepage": "https://github.com/Digital-Envision/mine-care#readme",
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    }
+}

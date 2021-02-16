@@ -1,0 +1,9 @@
+vendor/
+node_modules/
+.env
+**/.DS_Store
+*.code-workspace
+public/js/
+public/css/
+storage/fileUploads/
+.tmp/

@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  # PHP Service
+  laravel-app:
+    build:
+      dockerfile: ./docker/backend/Dockerfile
+      context: '.'
+    container_name: laravel-app
+    volumes:
+      - .:/var/www
+    ports:
+      - 8081:80
+    networks:
+      - app-network
+
+  # MySQL Service
+  db:
+    build: ./docker/db/
+    container_name: mine-care-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - app-network
+    volumes:
+      - ./.tmp/db-data:/var/lib/mysql
+
+# Docker Networks
+networks:
+  app-network:
+    driver: bridge
