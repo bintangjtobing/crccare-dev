@@ -25,10 +25,10 @@ jobs:
       - name: Install Dependencies
         run: |
           composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
-          npm install
+          npm install --legacy-peer-deps
           composer dump-autoload
           php artisan config:clear
-          npm run build
+          npm run dev
 
       - name: Copy Environment File
         run: |
