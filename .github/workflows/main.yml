@@ -26,6 +26,8 @@ jobs:
         run: |
           composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
           rm -rf node_modules package-lock.json
+          nvm install 16
+          nvm use 16
           npm install --legacy-peer-deps
           composer dump-autoload
           php artisan config:clear
