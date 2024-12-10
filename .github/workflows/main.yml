@@ -1,4 +1,4 @@
-name: PatunganYuk CRM v0.2 Deployment
+name: Crccare Deployment
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           npm install
           composer dump-autoload
           php artisan config:clear
-          npm run dev
+          npm run build
 
       - name: Copy Environment File
         run: |
