@@ -22,12 +22,10 @@ jobs:
         with:
           php-version: "7.2"
 
-      - name: Install nvm
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-          source ~/.bashrc
-          nvm install 16
-          nvm use 16
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Install Dependencies
         run: |
