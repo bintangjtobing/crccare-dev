@@ -3,11 +3,11 @@ name: PatunganYuk CRM v0.2 Deployment
 on:
   push:
     branches:
-      - main
+      - master
       - staging
   pull_request:
     branches:
-      - main
+      - master
       - staging
 
 jobs:
@@ -34,7 +34,7 @@ jobs:
         run: |
           if [ "${GITHUB_REF}" == "refs/heads/staging" ]; then
             cp .env.staging .env
-          elif [ "${GITHUB_REF}" == "refs/heads/main" ]; then
+          elif [ "${GITHUB_REF}" == "refs/heads/master" ]; then
             cp .env.example .env
           fi
 
@@ -48,7 +48,7 @@ jobs:
           sshpass -p 'SZ3bLYhBSC9scTp' ssh -o StrictHostKeyChecking=no bintangtobing@153.92.5.213 'cd /home/bintangtobing/crccaredev.bintangtobing.com && php artisan key:generate --ansi && php artisan migrate --force && php artisan optimize:clear && php artisan storage:link && php artisan config:clear'
 
       - name: Deploy to Production
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         run: |
           sshpass -p 'SZ3bLYhBSC9scTp' rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" ./ bintangtobing@153.92.5.213:/home/bintangtobing/crccaredev.bintangtobing.com/
           sshpass -p 'SZ3bLYhBSC9scTp' ssh -o StrictHostKeyChecking=no bintangtobing@153.92.5.213 'cd /home/bintangtobing/crccaredev.bintangtobing.com && php artisan key:generate --ansi && php artisan migrate --force && php artisan optimize:clear && php artisan storage:link && php artisan config:clear'
